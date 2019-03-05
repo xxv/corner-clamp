@@ -3,7 +3,8 @@ size = [30, 30, 12];
 overhang = [0, 0, 0];
 
 radius = 53;
-groove_d = 3;
+extension = 3;
+groove_d = 4;
 
 corner_notch_r = 6;
 
@@ -17,11 +18,9 @@ preview_box = [94, 94, 32] + [6, 6, 6];
   cube(preview_box);
 bracket();
 
-*groove(radius, groove_d);
-
 module bracket() {
   difference() {
-    pie_slice(radius, size.z);
+    pie_slice(radius + extension, size.z);
     translate([-smidge, -smidge, -smidge])
       cube(size + [smidge, smidge, smidge * 2]);
     // notch
@@ -45,13 +44,6 @@ module groove(r, d) {
   rotate_extrude(convexity = 10)
     translate([r, 0, 0])
       circle(d = d);
-
-  *difference() {
-    cylinder(r=r, h=d);
-    translate([0, 0, -smidge])
-    cylinder(r=r-d, h=d + smidge * 2);
-  }
-
 }
 
 module pie_slice(r, h) {
