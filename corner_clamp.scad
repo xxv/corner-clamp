@@ -1,5 +1,4 @@
 size = [30, 30, 12];
-//overhang = [10, 10, 0];
 overhang = [0, 0, 0];
 
 radius = 53;
