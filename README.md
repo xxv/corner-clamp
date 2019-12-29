@@ -4,6 +4,8 @@ Corner clamp
 This can help clamp a small rectangular box for gluing.
 It has a circular cutout so glue doesn't get on the clamp.
 
+![Corner Clamp demonstration](corner-clamp.jpg)
+
 Usage
 -----
 
